@@ -1,0 +1,58 @@
+# Colab-ноутбуки к курсу
+
+Этот каталог предназначен для коротких запускаемых примеров к урокам курса.
+Ноутбуки хранятся в публичном GitHub-репозитории, а Colab открывает их по
+ссылке вида:
+<a href="https://colab.research.google.com/github/moscoding/llm-wiki-agent/blob/main/notebooks/01_context_packet.ipynb" target="_blank" rel="noopener noreferrer">01_context_packet.ipynb в Colab</a>.
+
+Такой способ лучше, чем хранить канонические ноутбуки в Google Drive:
+
+* у курса есть один публичный канонический источник;
+* студент не уходит в чужой Drive-файл с неочевидными правами доступа;
+* каждый студент запускает свою копию в собственном Colab-сеансе;
+* API-ключи не попадают в репозиторий и не шарятся через файл.
+
+## Доступ и видимость
+
+Репозиторий `moscoding/llm-wiki-agent` должен оставаться публичным, иначе Colab
+ссылки не будут стабильно открываться у студентов без авторизации.
+
+Google Drive здесь не нужен: каноническая копия живет в GitHub, и для
+учебного курса предпочтительный путь GitHub -> Colab.
+
+## Безопасность ключей
+
+В ноутбуках нельзя хардкодить `OPENAI_API_KEY`.
+
+Для примеров с реальным API используем один из двух вариантов:
+
+* Colab Secrets;
+* `getpass.getpass(...)` в ячейке, где студент вводит ключ вручную.
+
+## Текущие Colab-ссылки
+
+Ссылки заработают после публикации этих файлов в `main` публичного репозитория.
+
+* <a href="https://colab.research.google.com/github/moscoding/llm-wiki-agent/blob/main/notebooks/01_context_packet.ipynb" target="_blank" rel="noopener noreferrer">01_context_packet.ipynb</a>
+* <a href="https://colab.research.google.com/github/moscoding/llm-wiki-agent/blob/main/notebooks/02_context_surfaces.ipynb" target="_blank" rel="noopener noreferrer">02_context_surfaces.ipynb</a>
+* <a href="https://colab.research.google.com/github/moscoding/llm-wiki-agent/blob/main/notebooks/03_context_budget.ipynb" target="_blank" rel="noopener noreferrer">03_context_budget.ipynb</a>
+* <a href="https://colab.research.google.com/github/moscoding/llm-wiki-agent/blob/main/notebooks/04_context_builder.ipynb" target="_blank" rel="noopener noreferrer">04_context_builder.ipynb</a>
+* <a href="https://colab.research.google.com/github/moscoding/llm-wiki-agent/blob/main/notebooks/05_responses_api_context_call.ipynb" target="_blank" rel="noopener noreferrer">05_responses_api_context_call.ipynb</a>
+
+## Редакторское правило
+
+Ноутбук не заменяет урок. Он должен быть коротким практическим продолжением
+одной идеи: контекстный пакет, поверхность контекста, бюджет, сборщик контекста
+или минимальный вызов Responses API.
+
+## Домены для ранних примеров
+
+До кэпстоун-проекта ноутбуки не используют лор Northstar Compute. Ранние
+примеры держатся ближе к типовым сценариям из документации OpenAI и Anthropic:
+поддержка клиентов, возвраты, статусы заказов, поиск по FAQ, простые утилиты и
+короткие документы.
+
+Это сделано специально: сначала студент учится видеть механику API, контекста,
+тулов и схем без лишнего сюжетного веса. Полноценный лор Northstar
+Compute появляется позже, в кэпстоун-проекте, где он уже нужен как рабочий
+домен для живой LLM Wiki.
